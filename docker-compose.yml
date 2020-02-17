@@ -1,0 +1,27 @@
+version: '3.7'
+services:
+        app:
+                build: .
+                ports:
+                        - "8081:8080"
+        service1 :
+                image: indraneelrachakonda/wp:latest
+        wordpress:
+                image: wordpress
+                links: 
+                        - wordpress_db:mysql
+                ports:
+                        - 8080:80
+        wordpress_db: 
+                image: mariadb
+                environment: 
+                        MYSQL_ROOT_PASSWORD: edureka
+        phpmyadmin: 
+                image: corbinu/docker-phpmyadmin
+                links: 
+                        - wordpress_db:mysql
+                ports:
+                        - 8000:80
+                environment:
+                        MYSQL_USERNAME: root
+                        MYSQL_ROOT_PASSWORD: edureka
