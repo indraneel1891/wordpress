@@ -15,7 +15,7 @@ services:
         wordpress_db: 
                 image: mariadb
                 environment: 
-                        MYSQL_ROOT_PASSWORD: edureka
+                        MYSQL_ROOT_PASSWORD: qwerty
         phpmyadmin: 
                 image: corbinu/docker-phpmyadmin
                 links: 
@@ -24,4 +24,4 @@ services:
                         - 8000:80
                 environment:
                         MYSQL_USERNAME: root
-                        MYSQL_ROOT_PASSWORD: edureka
+                        MYSQL_ROOT_PASSWORD: qwerty
